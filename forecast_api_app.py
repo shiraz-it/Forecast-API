@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python -u
 
 from flask import Flask, jsonify, abort, g, request
 from utilites import get_valid_request_code, parse_data_res, parse_summ_res, query_db
@@ -10,8 +10,6 @@ QUERY_SUMM = """SELECT MIN(Temperature), MIN(Precipitation), MAX(Temperature), M
 QUERY_DATA = """SELECT forecastTime, Temperature, Precipitation 
                 FROM weather_items 
                 WHERE Longitude = {lon} AND Latitude = {lat}"""
-# http://127.0.0.1:5000/
-# http://127.0.0.1:5000/weather/summarize?lat=-90.0&lon=-180.0
 
 
 app = Flask(__name__)
@@ -38,3 +36,6 @@ def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
+
+
+app.run()
