@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from flask import Flask, jsonify, abort, g, request
 from utilites import get_valid_request_code, parse_data_res, parse_summ_res, query_db
 
