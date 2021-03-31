@@ -5,8 +5,8 @@ DB_NAME = 'climacell_weather_items.db'
 SUMM_TITLES = ['min', 'max', 'avg']
 
 
-# returns 0 if the request is valid, hence handler_type in ['summarize', 'data'],
-# and lat, lon can be converted into float type.
+# returns 0, lat, lon if the request is valid, hence handler_type in
+# ['summarize', 'data'], and lat, lon can be converted into float type.
 # else, return matching error HTTP status codes for error responses
 def get_valid_request_code(handler_type, request):
     lat = request.args.get('lat')
