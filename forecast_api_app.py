@@ -10,8 +10,6 @@ QUERY_SUMM = """SELECT MIN(Temperature), MIN(Precipitation), MAX(Temperature), M
 QUERY_DATA = """SELECT forecastTime, Temperature, Precipitation 
                 FROM weather_items 
                 WHERE Longitude = {lon} AND Latitude = {lat}"""
-# http://127.0.0.1:5000/
-# http://127.0.0.1:5000/weather/summarize?lat=-90.0&lon=-180.0
 
 
 app = Flask(__name__)
@@ -40,4 +38,4 @@ def close_connection(exception):
         db.close()
 
 
-app.run()
+app.run(host= '0.0.0.0')
