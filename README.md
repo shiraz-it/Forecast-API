@@ -6,8 +6,47 @@ Forecast-API is a a weather web service, allowing you to get forecaste informati
 Given longitude and latitude, the API return the temperature and precipitation measures in this area. 
 
 
+## Getting Started - AWS EC2 as Server
+Originaly this project used AWS- an EC2 instance with python virtual evnironment. 
 
-## Getting Started
+In this case, instalation works bit different:
+
+1. Open SSH connection with .pem file.
+
+2. Use the package-management system of the server operation system to install requirements. 
+
+
+Alternatively, if package-management system can't install some requirements (like yum):
+
+1. Install Python 3.6:
+
+> sudo yum install rh-python36
+ 
+2. Create new virtual environment:
+
+> python3 -m venv venv
+
+3. Activate the virtual environment:
+
+> source venv/bin/activate
+
+4. Install git in your EC2 instance, and clone this repository:
+
+> sudo yum install git -y
+> git clone https://github.com/shiraz-it/Forecast-API.git 
+
+5. Install project's python dependencies (no need to mention pip3 in venv):
+
+> pip install -r requirements.txt
+ 
+6. Create your oun DB:
+> python DBCreation.py
+
+7. Run the app:
+>  python forecast_api_app.py &
+
+
+## Getting Started - Local Server
 
 1. First, clone the repository:
 
