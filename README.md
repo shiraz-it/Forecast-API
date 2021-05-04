@@ -6,10 +6,11 @@ Forecast-API is a a weather web service, allowing you to get forecaste informati
 Given longitude and latitude, the API return the temperature and precipitation measures in this area. 
 
 
+
 ## Getting Started - AWS EC2 as Server
 Originaly this project used AWS- an EC2 instance with python virtual evnironment. 
 
-In this case, instalation works bit different:
+In this case, installation works bit different:
 
 1. Open SSH connection with .pem file.
 
